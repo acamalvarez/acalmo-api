@@ -5,9 +5,9 @@ Acalmo API is a modular, high-performance FastAPI application designed to scale 
 ## Features
 
 - **Multi-Objective Architecture:** Fully modularized routing (e.g., `/api/v1/...`) to gracefully handle future expansions beyond the base digital twin.
-- **Asynchronous Streaming:** Provides a real-time, async streaming chat interface using the latest `gemini-2.5-flash` model.
+- **Asynchronous Streaming:** Provides a real-time, async streaming chat interface powered by Google Gemini models.
 - **Vertex AI Backend:** Seamless integration natively with Google Cloud Vertex AI infrastructure using Application Default Credentials (ADC).
-- **Easy Configuration:** Uses Pydantic `BaseSettings` for robust environment-based deployment.
+- **Easy Configuration:** Uses Pydantic `BaseSettings` for robust environment-based deployment and model configuration.
 - **Dockerized Environment:** Fully containerized setup for easy local development and production deployments.
 - **Automated CI/CD:** Ready-to-go deployment pipeline using Google Cloud Build, Artifact Registry, and Cloud Run, utilizing Secret Manager for sensitive environment variables.
 
@@ -36,6 +36,7 @@ Acalmo API is a modular, high-performance FastAPI application designed to scale 
     ```env
     GOOGLE_CLOUD_PROJECT=your-project-id
     GOOGLE_CLOUD_LOCATION=us-central1
+    MODEL=gemini-3.5-flash  # Optional: defaults to the configured Gemini model
     TWIN_INSTRUCTIONS="Your digital twin instructions here..."
     ```
 
