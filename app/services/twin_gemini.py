@@ -9,7 +9,7 @@ from app.core.config import config
 
 @functools.cache
 def get_genai_client() -> genai.Client:
-    return genai.Client(vertexai=True)
+    return genai.Client(vertexai=True, location="global")
 
 
 async def get_chat_stream(prompt: str, client: genai.Client) -> AsyncIterator[GenerateContentResponse]:
